@@ -1,0 +1,24 @@
+<html>
+ <head>
+   <meta charset="utf-8">
+
+   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+ </head>
+ <body>
+   <a-scene>
+    <a-assets>
+        <a-asset-item id="earth-obj" src="assets/earth_ball.obj"></a-asset-item>
+        <a-asset-item id="earth-mtl" src="assets/earth_ball.mtl"></a-asset-item>
+        <a-asset-item id="earth-jpg" src="assets/earth_ball.jpg"></a-asset-item>
+     </a-assets>
+
+     <a-entity
+        obj-model="obj: #earth-obj; mtl: #earth-mtl"
+        position="0 0 -2"
+        rotation="0 0 0"
+        material="src: #earth-jpg"
+        scale="1 1 1">
+     </a-entity>
+   </a-scene>
+  </body>
+</html>
