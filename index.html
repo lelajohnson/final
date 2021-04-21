@@ -3,22 +3,43 @@
    <meta charset="utf-8">
 
    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
  </head>
  <body>
-   <a-scene>
+   <a-scene cursor="rayOrigin: mouse">
     <a-assets>
-        <a-asset-item id="earth-obj" src="assets/earth_ball.obj"></a-asset-item>
-        <a-asset-item id="earth-mtl" src="assets/earth_ball.mtl"></a-asset-item>
-        <a-asset-item id="earth-jpg" src="assets/earth_ball.jpg"></a-asset-item>
-     </a-assets>
+      <img id="earth-jpg" src="assets/earth_ball.jpg">
+    </a-assets>
 
-     <a-entity
-        obj-model="obj: #earth-obj; mtl: #earth-mtl"
-        position="0 0 -2"
-        rotation="0 0 0"
-        material="src: #earth-jpg"
-        scale="1 1 1">
-     </a-entity>
+    <a-entity
+          geometry="primitive: sphere;"
+          radius = "1;"
+          position="0 1.5 -8;"
+          material="src: #earth-jpg"
+          scale="5 5 5"
+          animation="property: rotation;
+              to: 360 360 0;
+              dur: 100000;
+              easing: linear;
+              loop: true;">
+          <a-sphere
+            radius="1;"
+            position="-0.12 0.576 0.806"
+            scale=".02 .02 .02"
+            event-set__enter="_event: mouseenter; _target: #popText; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popText; visible: false">
+           <a-text id="popText" value="Hello Pop Up!" align="center" color="#FFF" visible="false" position="0 0 -5"
+                geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+            </a-sphere>
+            <a-sphere
+              radius="1;"
+              position="-0.10 0.6 -0.777"
+              scale=".02 .02 .02">
+          </a-sphere>
+    </a-entity>
+
+    <a-sky color="black"></a-sky>
+
    </a-scene>
   </body>
 </html>
