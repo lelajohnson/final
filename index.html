@@ -9,6 +9,7 @@
    <a-scene cursor="rayOrigin: mouse">
     <a-assets>
       <img id="earth-jpg" src="assets/earth_ball.jpg">
+      <img id="bitcoin" src="assets/bitcoin.jpg">
     </a-assets>
 
     <a-entity
@@ -21,64 +22,154 @@
               to: 360 360 0;
               dur: 100000;
               easing: linear;
-              loop: true;">
+              loop: true;
+              pauseEvents: rotation-pause; 
+              resumeEvents: rotation-resume;
+              dir:alternate;">
+
           <a-sphere
             radius="1;"
             position="-0.12 0.576 0.806"
+            material="src: #bitcoin"
+            rotation="-10 0 0"
             scale=".02 .02 .02"
-            event-set__enter="_event: mouseenter; _target: #popText; visible: true"
-            event-set__leave="_event: mouseleave; _target: #popText; visible: false">
-           <a-text id="popText" value="Hello Pop Up!" align="center" color="#FFF" visible="false" position="0 0 -5"
-                geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+            event-set__enter="_event: mouseenter; _target: #popTextUSA; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextUSA; visible: false">
                 <!--USA-->
             </a-sphere>
 
             <a-sphere
               radius="1;"
+              position="0.489 0.090 0.868"
+              material="src: #bitcoin"
+              rotation="0 10 0"
+              scale=".02 .02 .02"
+              event-set__enter="_event: mouseenter; _target: #popTextVenezuela; visible: true"
+              event-set__leave="_event: mouseleave; _target: #popTextVenezuela; visible: false">
+                  <!--Venezuela-->
+              </a-sphere>
+
+              <a-sphere
+                radius="1;"
+                position="0.501 -0.359 0.787"
+                material="src: #bitcoin"
+                rotation="20 20 0"
+                scale=".02 .02 .02"
+                event-set__enter="_event: mouseenter; _target: #popTextParaguay; visible: true"
+                event-set__leave="_event: mouseleave; _target: #popTextParaguay; visible: false">
+                    <!--Paraguay-->
+                </a-sphere>
+
+            <a-sphere
+              radius="1;"
+              material="src: #bitcoin"
               position="-0.144 0.487 -0.863"
-              scale=".02 .02 .02">
+              scale=".02 .02 .02"
+              rotation="-10 185 0"
+              event-set__enter="_event: mouseenter; _target: #popTextChina; visible: true"
+              event-set__leave="_event: mouseleave; _target: #popTextChina; visible: false">
               <!--china-->
             </a-sphere>
 
           <a-sphere
             radius="1;"
+            material="src: #bitcoin"
             position="-0.078 0.782 -0.621"
-            scale=".02 .02 .02">
+            scale=".02 .02 .02"
+            rotation="225 0 0"
+            event-set__enter="_event: mouseenter; _target: #popTextRussia; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextRussia; visible: false">
             <!--russia-->
           </a-sphere>
 
           <a-sphere
             radius="1;"
             position="-0.078 0.782 -0.621"
-            scale=".02 .02 .02">
+            material="src: #bitcoin"
+            scale=".02 .02 .02"
+            event-set__enter="_event: mouseenter; _target: #popTextKazakhstan; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextKazakhstan; visible: false">
             <!--kazakhstan-->
           </a-sphere>
 
           <a-sphere
             radius="1;"
             position="-0.202 0.079 -0.965"
-            scale=".02 .02 .02">
+            rotation="0 200 0"
+            material="src: #bitcoin"
+            scale=".02 .02 .02"
+            event-set__enter="_event: mouseenter; _target: #popTextMalaysia; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextMalaysia; visible: false">
             <!--malaysia-->
           </a-sphere>
 
           <a-sphere
             radius="1;"
             position="0.470 0.494 -0.726"
-            scale=".02 .02 .02">
+            material="src: #bitcoin"
+            scale=".02 .02 .02"
+            rotation="200 -20 -50"
+            event-set__enter="_event: mouseenter; _target: #popTextIran; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextIran; visible: false">
             <!--iran-->
           </a-sphere>
 
           <a-sphere
             radius="1;"
+            rotation="-30 0 0"
             position="-0.102 0.780 0.619"
+            material="src: #bitcoin"
             scale=".02 .02 .02"
-            event-set__enter="_event: mouseenter; _target: #popText; visible: true"
-            event-set__leave="_event: mouseleave; _target: #popText; visible: false">
-           <a-text id="popText" value="Hello Pop Up!" align="center" color="#FFF" visible="false" position="-0.367 2.104 0.609"
-                geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
-                <!--canada-->
+            event-set__enter="_event: mouseenter; _target: #popTextCanada; visible: true"
+            event-set__leave="_event: mouseleave; _target: #popTextCanada; visible: false">
+            <!--canada-->
             </a-sphere>
+
+            <a-sphere
+              radius="1;"
+              rotation="-30 75 -100"
+              position="0.598 0.790 -0.111"
+              material="src: #bitcoin"
+              scale=".02 .02 .02"
+              event-set__enter="_event: mouseenter; _target: #popTextGermany; visible: true"
+              event-set__leave="_event: mouseleave; _target: #popTextGermany; visible: false">
+              <!--germany-->
+              </a-sphere>
+
+              <a-sphere
+                radius="1;"
+                rotation="-50 72 -104"
+                position="0.398 0.900 -0.131"
+                material="src: #bitcoin"
+                scale=".02 .02 .02"
+                event-set__enter="_event: mouseenter; _target: #popTextNorway; visible: true"
+                event-set__leave="_event: mouseleave; _target: #popTextNorway; visible: false">
+                <!--norway-->
+                </a-sphere>
     </a-entity>
+    <!-- pop up in front of camera -->
+    <a-text iid="popTextUSA" value="USA: 7.24% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+         geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextCanada" value="Canada: 0.82% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+         geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextChina" value="China: 65.08% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextRussia" value="Russia: 6.90% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextKazakhstan" value="Kazakhstan: 6.17% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextMalaysia" value="Malaysia: 4.33% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextIran" value="Iran: 3.82% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextGermany" value="Germany: 0.56% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextNorway" value="Norway: 0.48% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextVenezuela" value="Venezuela: 0.42% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
+    <a-text id="popTextParaguay" value="Paraguay: 0.22% average monthly hashrate" align="center" color="#FFF" visible="false" position="0, 1, -2"
+          geometry="primitive: plane; width: 4.25; height: 0.5" material="color: #ff9900"></a-text>
 
     <a-sky color="black"></a-sky>
 
